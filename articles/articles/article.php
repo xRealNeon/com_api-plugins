@@ -200,7 +200,7 @@ class ArticlesApiResourceArticle extends ApiResource
 	}
 
 	/**
-	 * CreateUpdateArticle is to create / upadte article
+	 * CreateUpdateArticle is to create / update article
 	 *
 	 * @return  Bolean
 	 *
@@ -249,8 +249,8 @@ class ArticlesApiResourceArticle extends ApiResource
 			$data = array(
 			'title' => $app->input->get('title', '', 'STRING'),
 			'alias' => $app->input->get('alias', '', 'STRING'),
-			'introtext' => $app->input->get('introtext', '', 'STRING'),
-			'fulltext' => $app->input->get('fulltext', '', 'STRING'),
+			'introtext' => $app->input->get('introtext', '', 'RAW'),
+			'fulltext' => $app->input->get('fulltext', '', 'RAW'),
 			'state' => $app->input->get('state', '', 'INT'),
 			'catid' => $app->input->get('catid', '', 'INT'),
 			'publish_up' => $app->input->get('publish_up', '', 'STRING'),
@@ -272,8 +272,8 @@ class ArticlesApiResourceArticle extends ApiResource
 			$article = JTable::getInstance('content');
 			$article->title = $app->input->get('title', '', 'STRING');
 			$article->alias = $app->input->get('alias', '', 'STRING');
-			$article->introtext = $app->input->get('introtext', '', 'STRING');
-			$article->fulltext = $app->input->get('fulltext', '', 'STRING');
+			$article->introtext = $app->input->get('introtext', '', 'RAW');
+			$article->fulltext = $app->input->get('fulltext', '', 'RAW');
 			$article->state = $app->input->get('state', '', 'INT');
 			$article->catid = $app->input->get('catid', '', 'INT');
 			$article->publish_up = $app->input->get('publish_up', '', 'STRING');
